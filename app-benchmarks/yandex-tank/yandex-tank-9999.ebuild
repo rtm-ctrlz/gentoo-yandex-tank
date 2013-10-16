@@ -36,7 +36,10 @@ RDEPEND="${DEPEND}"
 
 src_install() {
 	insinto "/usr/lib/yandex-tank/"
-	doins Tank tankcore.py tank.py *.sh
+	doins -r Tank tankcore.py
+
+	exeinto "/usr/lib/yandex-tank/"
+	doexe tank.py *.sh
 
 	insinto "/etc/yandex-tank/"
 	doins 00-base.ini
@@ -47,4 +50,6 @@ src_install() {
 	dosym /usr/lib/yandex-tank/tank.py /usr/bin/lunapark
 	dosym /usr/lib/yandex-tank/ab.sh /usr/bin/yandex-tank-ab
 	dosym /usr/lib/yandex-tank/jmeter.sh /usr/bin/yandex-tank-jmeter
+
+	keepdir "/etc/yandex-tank/"
 }
