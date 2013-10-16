@@ -1,0 +1,11 @@
+--- pd/debug/addrinfo_bfd.C.orig	2013-10-16 16:03:00.272707739 +0400
++++ pd/debug/addrinfo_bfd.C	2013-10-16 16:00:12.108704123 +0400
+@@ -10,6 +10,8 @@
+ #include <pd/base/list.H>
+ #include <pd/base/exception.H>
+ 
++#define PACKAGE "phantom"
++#define PACKAGE_VERSION "9999"
+ #include <bfd.h>
+ #include <cxxabi.h>
+ #include <stdlib.h>

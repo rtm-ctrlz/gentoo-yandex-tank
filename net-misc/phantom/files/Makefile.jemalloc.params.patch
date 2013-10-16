@@ -1,0 +1,11 @@
+--- phantom/Makefile.inc.orig	2013-10-16 16:19:22.370728853 +0400
++++ phantom/Makefile.inc	2013-10-16 16:17:59.977727082 +0400
+@@ -54,7 +54,7 @@
+ 
+ libs_phantom = lib/libpd-http.a lib/libpd-bq.a lib/libpd-base.a
+ 
+-CFLAGS.phantom/jemalloc/jemalloc.c = -Wno-unused
++CFLAGS.phantom/jemalloc/jemalloc.c = -Wno-unused -Wno-error=unused-parameter
+ 
+ bin/phantom: $(objs_phantom) $(objs_jemalloc) $(libs_phantom)
+ 	$(CXX) -rdynamic $(objs_phantom) $(objs_jemalloc) \
