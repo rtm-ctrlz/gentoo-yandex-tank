@@ -31,6 +31,9 @@ DEPEND="
 	>=dev-lang/python-2.6
 	dev-python/simplejson
 	dev-python/progressbar
+
+	dev-python/ipaddr
+	dev-python/lxml
 "
 RDEPEND="${DEPEND}"
 
