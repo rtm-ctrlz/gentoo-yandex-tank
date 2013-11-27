@@ -34,6 +34,7 @@ DEPEND="
 
 	dev-python/ipaddr
 	dev-python/lxml
+	dev-python/psutil
 "
 RDEPEND="${DEPEND}"
 
