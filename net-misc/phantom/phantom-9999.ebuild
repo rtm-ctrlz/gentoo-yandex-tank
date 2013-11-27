@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit autotools git-2
+inherit autotools git-2 eutils
 
 DESCRIPTION="Lightweight websever/benchmark tool"
 HOMEPAGE="https://github.com/mamchits/phantom"
@@ -24,6 +24,8 @@ DOCS="AUTHORS README README.ru"
 src_compile() {
 	epatch "${FILESDIR}/debug-addrinfo_bfd.patch"
 	epatch "${FILESDIR}/Makefile.jemalloc.params.patch"
+	echoo "FAX"
+	epatch "${FILESDIR}/code_style.patch"
     emake -R || die
 }
 src_install () {

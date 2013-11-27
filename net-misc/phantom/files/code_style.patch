@@ -1,0 +1,31 @@
+--- pd/base/in.H.orig	2013-11-28 02:07:16.000000000 +0300
++++ pd/base/in.H	2013-11-28 02:07:48.000000000 +0300
+@@ -214,7 +214,7 @@
+ 			off_end = off_begin + len;
+ 			list = ptr.page;
+ 
+-			while(list->optimize(*this));
++			while(list->optimize(*this)) {};
+ 		}
+ 	}
+ 
+@@ -222,7 +222,7 @@
+ 		in_t(_segment) {
+ 
+ 		if(size())
+-			while(list->optimize(*this));
++			while(list->optimize(*this)) {};
+ 	}
+ 
+ 	inline ~in_segment_t() throw() { }
+--- pd/base/string.C.orig	2013-11-28 02:15:13.000000000 +0300
++++ pd/base/string.C	2013-11-28 02:15:25.000000000 +0300
+@@ -58,7 +58,7 @@
+ }
+ 
+ void string_t::ctor_t::rollback(char c) {
+-	while(wpos && string_page->data[--wpos] != c);
++	while(wpos && string_page->data[--wpos] != c) {};
+ }
+ 
+ string_t::string_t(ctor_t &ctor) {
