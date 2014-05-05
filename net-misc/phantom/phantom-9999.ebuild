@@ -23,7 +23,6 @@ DOCS="AUTHORS README README.ru"
 
 src_compile() {
 	epatch "${FILESDIR}/debug-addrinfo_bfd.patch"
-	epatch "${FILESDIR}/Makefile.jemalloc.params.patch"
 	epatch "${FILESDIR}/code_style.patch"
     emake -R || die
 }
